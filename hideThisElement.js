@@ -3,12 +3,18 @@
 
 jetpack.future.import("menu");
 
-jetpack.menu.context.page.add({
-  label: "hide this element",
-  command: function() {
-    console.log("hide this element");
+jetpack.menu.context.page.add(function (context) ({
+   label: "hide this element",
+   command: function() {
+    console_dir(context.node);
+   }
+}));
+
+function console_dir(obj) {
+  for (p in obj) {
+    console.log(p + " : " + obj[p]);
   }
-});
+}
 
   /*
   var obj = gContextMenu.target;
