@@ -7,7 +7,7 @@ jetpack.menu.context.page.add(function (context) {
   return {
     label: "hide this element",
     command: function() {
-      console_dir(context.node);
+      $(context.node).toggle();
     }
   };
 });
@@ -18,9 +18,3 @@ function console_dir(obj) {
   }
 }
 
-  /*
-  var obj = gContextMenu.target;
-  if (obj) {
-    obj.style.display = "none";
-  }
-  */
